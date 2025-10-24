@@ -24,6 +24,7 @@ public class Main {
 
             System.out.println("Vuoi aggiungere un nuovo cavallo?(1)");
 
+
         } while (scanner.nextInt()==1);
 
         for(CorsaCavalli cavallo : cavalli) {
