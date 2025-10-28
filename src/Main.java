@@ -1,9 +1,11 @@
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        Random rand = new Random();
 
 
 
@@ -27,8 +29,17 @@ public class Main {
 
         } while (scanner.nextInt()==1);
 
+        int azzoppato = rand.nextInt(cavalli.size()-1);
+        CorsaCavalli zoppo = cavalli.get(azzoppato);
+
         for(CorsaCavalli cavallo : cavalli) {
             cavallo.start();
+        }
+
+        try{
+            zoppo.interrupt();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
 
 
